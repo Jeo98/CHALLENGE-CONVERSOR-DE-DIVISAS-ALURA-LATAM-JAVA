@@ -12,8 +12,9 @@ public class ConsultaAPI {
 
 
 
-    public Convert buscaDivisas(String divisa1){
-        URI direccion = URI.create("https://v6.exchangerate-api.com/v6/6cd67d834a49dbc3f25719d6/latest/"+divisa1);
+    public Convert buscaDivisas(String divisa1, String divisa2, double cantidad){
+        URI direccion = URI.create("https://v6.exchangerate-api.com/v6/6cd67d834a49dbc3f25719d6/pair/"+divisa1+"/"+divisa2+"/"+cantidad);
+
         HttpClient client = HttpClient.newHttpClient();
         HttpRequest request = HttpRequest.newBuilder()
                 .uri(direccion)
@@ -25,7 +26,7 @@ public class ConsultaAPI {
             throw new RuntimeException(e);
         }
 
-        return new Gson().  fromJson(response.body(), Convert.class);
+        return new Gson().fromJson(response.body(), Convert.class);
 
 
 
