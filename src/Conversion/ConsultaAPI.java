@@ -19,14 +19,16 @@ public class ConsultaAPI {
         HttpRequest request = HttpRequest.newBuilder()
                 .uri(direccion)
                 .build();
-        HttpResponse<String> response = null;
+
         try {
+            HttpResponse<String> response = null;
             response = client.send(request, HttpResponse.BodyHandlers.ofString());
-        } catch (IOException | InterruptedException e) {
-            throw new RuntimeException(e);
+            return new Gson().fromJson(response.body(), Convert.class);
+        } catch (Exception e) {
+            throw new RuntimeException("No se encontró divisa ingresada.");
         }
 
-        return new Gson().fromJson(response.body(), Convert.class);
+
 
 
 
