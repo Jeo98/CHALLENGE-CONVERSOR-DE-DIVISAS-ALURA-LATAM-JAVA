@@ -7,11 +7,17 @@ import com.google.gson.FieldNamingPolicy;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class EjecucionPrueba {
     public static void main(String[] args) {
         Monedas menuMonedas = new Monedas();
+        double moneda;
+        Scanner lectura = new Scanner(System.in);
+        boolean menu=true;
+        int  opcion=0;
+
         ConsultaAPI consulta = new ConsultaAPI();
         Convert conversion = consulta.buscaDivisas("USD","ARS",2.5);
         System.out.println(conversion);
@@ -21,25 +27,24 @@ public class EjecucionPrueba {
                         UPPER_CAMEL_CASE).setPrettyPrinting() // para que se vea más pretty
                 .create();
 
-        double moneda;
 
-        Scanner lectura = new Scanner(System.in);
-
-        boolean menu=true;
-        int  opcion;
 
         while(menu){
-            System.out.println(menuMonedas.menu());
-
-            opcion= lectura.nextInt();
-            while((opcion < 1 || opcion > 6 || opcion != 9)){
-
-                System.out.println("Error, ingrese opción válida\n -> ");
-                opcion=lectura.nextInt();
+            try{
                 System.out.println(menuMonedas.menu());
 
-            }
+                opcion = lectura.nextInt();
+                while ((opcion < 1 || opcion > 6 || opcion != 9)) {
 
+                    System.out.println("Error, ingrese opción válida\n -> ");
+                    opcion = lectura.nextInt();
+                    System.out.println(menuMonedas.menu());
+
+                }
+            }catch (InputMismatchException  e ) { //en caso de que ingrese un tipo de dato incorrecto
+                System.out.println("Error: dato ingresado no valido. INGRESE OPCION CORRECTA: ");
+                opcion = lectura.nextInt();
+            }
             switch(opcion){
 
                 case 1:
@@ -86,7 +91,7 @@ public class EjecucionPrueba {
                     }
                     System.out.println(consulta.buscaDivisas("USD","BRL",moneda));
 
-                break;
+                    break;
 
                 case 4:
                     System.out.println("REAL BRASILERO A DÓLAR--------------");
@@ -139,7 +144,7 @@ public class EjecucionPrueba {
                     System.out.println("--------------SALIDA | JEO CONVERSOR DE MONEDAS---------------");
                     System.out.println("---------------------------------------------------------------");
                     menu=false;
-                break;
+                    break;
 
             }
 

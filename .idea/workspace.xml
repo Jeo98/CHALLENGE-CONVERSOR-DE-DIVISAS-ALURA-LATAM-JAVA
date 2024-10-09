@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2562b388-d354-4a75-af9b-985fb163a99d" name="Changes" comment="Creación clases, Record, API.">
+    <list default="true" id="2562b388-d354-4a75-af9b-985fb163a99d" name="Changes" comment="CREACION DE METODO MENU EN CLASE MONEDAS| MAIN CON MENU LISTO Y CONVERSIONES LISTAS">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Conversion/ConsultaAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Conversion/ConsultaAPI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Conversion/Monedas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Conversion/Monedas.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Ejecuciones/EjecucionPrueba.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ejecuciones/EjecucionPrueba.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -101,11 +99,20 @@
       <option name="project" value="LOCAL" />
       <updated>1728424243263</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="CREACION DE METODO MENU EN CLASE MONEDAS| MAIN CON MENU LISTO Y CONVERSIONES LISTAS">
+      <option name="closed" value="true" />
+      <created>1728513611363</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1728513611363</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Creación clases, Record, API." />
-    <option name="LAST_COMMIT_MESSAGE" value="Creación clases, Record, API." />
+    <MESSAGE value="CREACION DE METODO MENU EN CLASE MONEDAS| MAIN CON MENU LISTO Y CONVERSIONES LISTAS" />
+    <option name="LAST_COMMIT_MESSAGE" value="CREACION DE METODO MENU EN CLASE MONEDAS| MAIN CON MENU LISTO Y CONVERSIONES LISTAS" />
   </component>
 </project>
