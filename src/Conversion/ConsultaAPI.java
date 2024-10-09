@@ -28,9 +28,5 @@ public class ConsultaAPI {
             throw new RuntimeException("No se encontró divisa ingresada.");
         }
 
-
-
-
-
     }
 }
