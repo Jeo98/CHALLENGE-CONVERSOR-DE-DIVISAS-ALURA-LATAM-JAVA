@@ -26,9 +26,6 @@ public class EjecucionPrueba {
                 setFieldNamingPolicy(FieldNamingPolicy.
                         UPPER_CAMEL_CASE).setPrettyPrinting() // para que se vea más pretty
                 .create();
-
-
-
         while(menu){
             try{
                 System.out.println(menuMonedas.menu());
@@ -36,7 +33,7 @@ public class EjecucionPrueba {
                 opcion = lectura.nextInt();
                 while ((opcion < 1 || opcion > 6 || opcion != 9)) {
 
-                    System.out.println("Error, ingrese opción válida\n -> ");
+                    System.out.println("Error, ingrese opción válida: ");
                     opcion = lectura.nextInt();
                     System.out.println(menuMonedas.menu());
 

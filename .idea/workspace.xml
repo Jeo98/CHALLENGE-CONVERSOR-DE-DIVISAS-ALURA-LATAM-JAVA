@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2562b388-d354-4a75-af9b-985fb163a99d" name="Changes" comment="CREACION DE METODO MENU EN CLASE MONEDAS| MAIN CON MENU LISTO Y CONVERSIONES LISTAS">
+    <list default="true" id="2562b388-d354-4a75-af9b-985fb163a99d" name="Changes" comment="Aplicando exceptions para control de errores en ingreso de datos dentro de menu(error por ingreso tipo de dato incompatible con variable)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Ejecuciones/EjecucionPrueba.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ejecuciones/EjecucionPrueba.java" afterDir="false" />
     </list>
@@ -25,21 +25,21 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "Jeo98"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Jeo98&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/Jeo98/CHALLENGE-CONVERSOR-DE-DIVISAS-ALURA-LATAM-JAVA.git",
-    "accountId": "7ef66682-e2a4-4f67-b630-ef4189b9ec36"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Jeo98/CHALLENGE-CONVERSOR-DE-DIVISAS-ALURA-LATAM-JAVA.git&quot;,
+    &quot;accountId&quot;: &quot;7ef66682-e2a4-4f67-b630-ef4189b9ec36&quot;
   }
-}]]></component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 6
-}]]></component>
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
   <component name="ProjectId" id="2nAOjGqpjljnxfZjtLQSQaW3T2y" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -48,20 +48,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.EjecucionPrueba.executor": "Run",
-    "Application.Main.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "J:/DESCARGAS FIREFOX/gson-2.11.0.jar",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.EjecucionPrueba.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;J:/DESCARGAS FIREFOX/gson-2.11.0.jar&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="EjecucionPrueba" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Ejecuciones.EjecucionPrueba" />
@@ -107,12 +107,21 @@
       <option name="project" value="LOCAL" />
       <updated>1728513611363</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Aplicando exceptions para control de errores en ingreso de datos dentro de menu(error por ingreso tipo de dato incompatible con variable)">
+      <option name="closed" value="true" />
+      <created>1728514757188</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1728514757188</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Creación clases, Record, API." />
     <MESSAGE value="CREACION DE METODO MENU EN CLASE MONEDAS| MAIN CON MENU LISTO Y CONVERSIONES LISTAS" />
-    <option name="LAST_COMMIT_MESSAGE" value="CREACION DE METODO MENU EN CLASE MONEDAS| MAIN CON MENU LISTO Y CONVERSIONES LISTAS" />
+    <MESSAGE value="Aplicando exceptions para control de errores en ingreso de datos dentro de menu(error por ingreso tipo de dato incompatible con variable)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Aplicando exceptions para control de errores en ingreso de datos dentro de menu(error por ingreso tipo de dato incompatible con variable)" />
   </component>
 </project>
