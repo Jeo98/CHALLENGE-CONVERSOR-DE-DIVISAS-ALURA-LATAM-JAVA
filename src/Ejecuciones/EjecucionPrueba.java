@@ -1,13 +1,15 @@
 package Ejecuciones;
 import Conversion.ConsultaAPI;
+
+import java.io.IOException;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
 import java.io.FileWriter;
-import java.io.IOException;
+
 
 public class EjecucionPrueba {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 
         double moneda;
         Scanner lectura = new Scanner(System.in);
