@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2562b388-d354-4a75-af9b-985fb163a99d" name="Changes" comment="Aplicando exceptions para control de errores en ingreso de datos dentro de menu(error por ingreso tipo de dato incompatible con variable)">
+    <list default="true" id="2562b388-d354-4a75-af9b-985fb163a99d" name="Changes" comment="realizando modificaciones para json, analizar todo el codigo de nuevo para que al imprimir resultado, la salida sea distinta a la de API">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Conversion/ConsultaAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Conversion/ConsultaAPI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Conversion/Monedas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Conversion/Monedas.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Ejecuciones/EjecucionPrueba.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ejecuciones/EjecucionPrueba.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -125,13 +124,22 @@
       <option name="project" value="LOCAL" />
       <updated>1728660917066</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="realizando modificaciones para json, analizar todo el codigo de nuevo para que al imprimir resultado, la salida sea distinta a la de API">
+      <option name="closed" value="true" />
+      <created>1728665145087</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1728665145087</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Creación clases, Record, API." />
     <MESSAGE value="CREACION DE METODO MENU EN CLASE MONEDAS| MAIN CON MENU LISTO Y CONVERSIONES LISTAS" />
     <MESSAGE value="Aplicando exceptions para control de errores en ingreso de datos dentro de menu(error por ingreso tipo de dato incompatible con variable)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Aplicando exceptions para control de errores en ingreso de datos dentro de menu(error por ingreso tipo de dato incompatible con variable)" />
+    <MESSAGE value="realizando modificaciones para json, analizar todo el codigo de nuevo para que al imprimir resultado, la salida sea distinta a la de API" />
+    <option name="LAST_COMMIT_MESSAGE" value="realizando modificaciones para json, analizar todo el codigo de nuevo para que al imprimir resultado, la salida sea distinta a la de API" />
   </component>
 </project>

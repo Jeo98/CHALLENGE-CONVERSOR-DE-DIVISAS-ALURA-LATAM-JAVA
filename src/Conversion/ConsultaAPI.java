@@ -17,10 +17,19 @@ public class ConsultaAPI {
     private double valorMonedaConvertida=0.0;
     private String divisaACambiar;
     private String divisaARecibir;
-    Gson gson = new GsonBuilder().
-            setFieldNamingPolicy(FieldNamingPolicy.
-                    UPPER_CAMEL_CASE).setPrettyPrinting() // para que se vea más pretty
-            .create();
+
+    @Override
+    public String toString() {
+        return "Divisa a cambiar='" + divisaACambiar + '\'' +
+                ", Divisa a recibir='" + divisaARecibir + '\'' +
+                ", Valor de cambio= $ " + valorMonedaOriginal +" "+divisaARecibir+ " equivale a $1 " +divisaACambiar +
+                ", total a recibir=$ " + valorMonedaConvertida + " " + divisaARecibir ;
+    }
+
+    public ConsultaAPI() {
+
+    }
+
 
     public String getDivisaACambiar() {
         return divisaACambiar;
@@ -66,7 +75,15 @@ public class ConsultaAPI {
                 "\n9- SALIR DE CONVERSOR");
     }
 
-    public Convert buscaDivisas(String divisa1, String divisa2, double cantidad){
+        public ConsultaAPI (Convert datoAPI){
+
+            this.divisaACambiar=datoAPI.base_code();
+            this.divisaARecibir= datoAPI.target_code();
+            this.valorMonedaOriginal = datoAPI.conversion_rate();
+            this.valorMonedaConvertida = datoAPI.conversion_result();
+
+          }
+    public ConsultaAPI buscaDivisas(String divisa1, String divisa2, double cantidad){
         URI direccion = URI.create("https://v6.exchangerate-api.com/v6/6cd67d834a49dbc3f25719d6/pair/"+divisa1+"/"+divisa2+"/"+cantidad);
 
         HttpClient client = HttpClient.newHttpClient();
@@ -77,7 +94,10 @@ public class ConsultaAPI {
         try {
             HttpResponse<String> response = null;
             response = client.send(request, HttpResponse.BodyHandlers.ofString());
-            return new Gson().fromJson(response.body(), Convert.class); //String json = response.body();
+            Convert datosAPI = new Gson().fromJson(response.body(), Convert.class); //String json = response.body();
+            ConsultaAPI resultadosConversion= new ConsultaAPI(datosAPI);
+            return resultadosConversion;
+
         } catch (Exception e) {
             throw new RuntimeException("No se encontró divisa ingresada.");
         }
