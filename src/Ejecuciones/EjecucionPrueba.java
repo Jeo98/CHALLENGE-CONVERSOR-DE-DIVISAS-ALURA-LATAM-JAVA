@@ -26,6 +26,8 @@ public class EjecucionPrueba {
                 lectura.next();//limpio buffer
                 opcion = lectura.nextInt();
             }
+                FileWriter escrituraArchivo = new FileWriter("HistorialConversiones.txt"); //creo el archivo donde voy a escribir
+                 
             switch(opcion) {
                     case 1 :
                         try {
@@ -43,7 +45,11 @@ public class EjecucionPrueba {
                     lectura.next();//limpio buffer
                     moneda = lectura.nextDouble();
                 }
-                    System.out.println(consulta.buscaDivisas("USD", "ARS", moneda).toString());  //retorno funcion que realiza la conversion
+                    System.out.println(consulta.buscaDivisas("USD", "ARS", moneda).toString()); 
+
+escrituraArchivo.write(consulta.buscaDivisas("USD", "ARS", moneda).toString());
+
+ //retorno funcion que realiza la conversion
 
                     break;
 
@@ -64,6 +70,8 @@ public class EjecucionPrueba {
                         moneda = lectura.nextDouble();
                 }
                     System.out.println(consulta.buscaDivisas("ARS", "USD", moneda).toString()); //retorno funcion que realiza la conversion
+
+escrituraArchivo.write(consulta.buscaDivisas("ARS", "USD", moneda).toString());
 
                     break;
 
@@ -87,6 +95,8 @@ public class EjecucionPrueba {
                     }
                     System.out.println(consulta.buscaDivisas("USD", "BRL", moneda).toString());
 
+escrituraArchivo.write(consulta.buscaDivisas("USD", "BRL", moneda).toString());
+
                     break;
 
                 case 4:
@@ -109,6 +119,8 @@ public class EjecucionPrueba {
                     }
                     System.out.println(consulta.buscaDivisas("BRL", "USD", moneda).toString());
 
+escrituraArchivo.write(consulta.buscaDivisas("BRL", "USD", moneda).toString());
+
                     break;
 
                 case 5:
@@ -129,6 +141,8 @@ public class EjecucionPrueba {
                         moneda = lectura.nextDouble();
                     }
                     System.out.println(consulta.buscaDivisas("USD", "COP", moneda).toString());
+
+escrituraArchivo.write(consulta.buscaDivisas("USD", "COP", moneda).toString());
 
                     break;
 
@@ -151,12 +165,18 @@ public class EjecucionPrueba {
                     }
                     System.out.println(consulta.buscaDivisas("COP", "USD", moneda).toString());
 
+escrituraArchivo.write(consulta.buscaDivisas("COP", "USD", moneda).toString());
+
+
                     break;
 
                 case 9:
                     System.out.println("---------------------------------------------------------------");
                     System.out.println("--------------SALIDA | JEO CONVERSOR DE MONEDAS---------------");
-                    System.out.println("---------------------------------------------------------------");
+                   
+escrituraArchivo.close();
+lectura.close();
+ System.out.println("---------------------------------------------------------------");
                     menu = false;
                     break;
              }
