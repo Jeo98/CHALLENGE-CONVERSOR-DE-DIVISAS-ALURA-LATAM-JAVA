@@ -3,6 +3,9 @@ import Conversion.ConsultaAPI;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+import java.io.FileWriter;
+import java.io.IOException;
+
 public class EjecucionPrueba {
     public static void main(String[] args) {
 
