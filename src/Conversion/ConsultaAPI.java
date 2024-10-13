@@ -89,7 +89,7 @@ public class ConsultaAPI {
         try {
             HttpResponse<String> response = null;
             response = client.send(request, HttpResponse.BodyHandlers.ofString());
-            Convert datosAPI = new Gson().fromJson(response.body(), Convert.class); //String json = response.body();
+            Convert datosAPI = new Gson().fromJson(response.body(), Convert.class);
             ConsultaAPI resultadosConversion= new ConsultaAPI(datosAPI);
             return resultadosConversion;
 
