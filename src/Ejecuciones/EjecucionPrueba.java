@@ -1,10 +1,14 @@
 package Ejecuciones;
 import Conversion.ConsultaAPI;
+import com.google.gson.FieldNamingPolicy;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+
 
 import java.io.IOException;
+import java.time.LocalDateTime;
 import java.util.InputMismatchException;
 import java.util.Scanner;
-
 import java.io.FileWriter;
 
 
@@ -17,6 +21,10 @@ public class EjecucionPrueba {
         int  opcion;
 
         ConsultaAPI consulta = new ConsultaAPI();
+        Gson gson = new GsonBuilder().
+                setFieldNamingPolicy(FieldNamingPolicy.
+                        UPPER_CAMEL_CASE).setPrettyPrinting() // para que se vea más pretty
+                .create(); // para no tener problema entre mayusculas y minusculas
 
         while(menu){
             try{
@@ -31,8 +39,13 @@ public class EjecucionPrueba {
                 lectura.next();//limpio buffer
                 opcion = lectura.nextInt();
             }
-                FileWriter escrituraArchivo = new FileWriter("HistorialConversiones.txt"); //creo el archivo donde voy a escribir
-                 
+            FileWriter escrituraArchivotxt = new FileWriter("Historial conversiones.txt",true);
+            FileWriter escrituraArchivo = new FileWriter("HistorialConversiones.json",true); //creo el archivo donde voy a escribir
+            LocalDateTime ahora = LocalDateTime.now();
+            String hora = "Hora: " + ahora.getHour() + " : " + ahora.getMinute();
+            String fecha = ahora.getDayOfMonth() + "/"+ahora.getMonthValue()+"/"+ahora.getYear();
+            String consulta1; //guarda la informacion de la consulta
+
             switch(opcion) {
                     case 1 :
                         try {
@@ -45,14 +58,18 @@ public class EjecucionPrueba {
                             moneda = lectura.nextDouble();
 
                         }
-                }catch (InputMismatchException  e ) { //en caso de que ingrese un tipo de dato incorrecto
-                    System.out.println("Error: dato ingresado no valido. INGRESE OPCION CORRECTA: ");
-                    lectura.next();//limpio buffer
-                    moneda = lectura.nextDouble();
-                }
-                    System.out.println(consulta.buscaDivisas("USD", "ARS", moneda).toString()); 
+                        }catch (InputMismatchException  e ) { //en caso de que ingrese un tipo de dato incorrecto
+                            System.out.println("Error: dato ingresado no valido. INGRESE OPCION CORRECTA: ");
+                            lectura.next();//limpio buffer
+                            moneda = lectura.nextDouble();
+                        }
+                        consulta1 = consulta.buscaDivisas("USD", "ARS", moneda).toString();
+                        System.out.println(consulta1);
 
-escrituraArchivo.write(consulta.buscaDivisas("USD", "ARS", moneda).toString());
+                        escrituraArchivotxt.write(fecha+"--"+hora + "\nCantidad a cambiar: $" + moneda +", " +  consulta1 + "\n\n");
+                        escrituraArchivo.write(gson.toJson(fecha+"--"+hora + "\nCantidad a cambiar: $" + moneda +", " +  consulta1 + "\n\n"));
+                        escrituraArchivotxt.close();
+                        escrituraArchivo.close();
 
  //retorno funcion que realiza la conversion
 
@@ -74,10 +91,14 @@ escrituraArchivo.write(consulta.buscaDivisas("USD", "ARS", moneda).toString());
                     lectura.next();//limpio buffer
                         moneda = lectura.nextDouble();
                 }
-                    System.out.println(consulta.buscaDivisas("ARS", "USD", moneda).toString()); //retorno funcion que realiza la conversion
+                    consulta1 = consulta.buscaDivisas("ARS", "USD", moneda).toString();
+                    System.out.println(consulta1); //retorno funcion que realiza la conversion
 
-escrituraArchivo.write(consulta.buscaDivisas("ARS", "USD", moneda).toString());
 
+                    escrituraArchivotxt.write(fecha+"--"+hora + "\nCantidad a cambiar: $" + moneda +", " +  consulta1 + "\n\n");
+                    escrituraArchivo.write(gson.toJson(fecha+"--"+hora + "\nCantidad a cambiar: $" + moneda +", " +  consulta1 + "\n\n"));
+                    escrituraArchivotxt.close();
+                    escrituraArchivo.close();
                     break;
 
                 case 3:
@@ -98,9 +119,15 @@ escrituraArchivo.write(consulta.buscaDivisas("ARS", "USD", moneda).toString());
                         lectura.next();//limpio buffer
                         moneda = lectura.nextDouble();
                     }
-                    System.out.println(consulta.buscaDivisas("USD", "BRL", moneda).toString());
+                    consulta1=consulta.buscaDivisas("USD", "BRL", moneda).toString();
+                    System.out.println(consulta1); //retorno funcion que realiza la conversion
 
-escrituraArchivo.write(consulta.buscaDivisas("USD", "BRL", moneda).toString());
+
+                    escrituraArchivotxt.write(fecha+"--"+hora + "\nCantidad a cambiar: $" + moneda +", " +  consulta1 + "\n\n");
+                    escrituraArchivo.write(gson.toJson(fecha+"--"+hora + "\nCantidad a cambiar: $" + moneda +", " +  consulta1 + "\n\n"));
+                    escrituraArchivotxt.close();
+                    escrituraArchivo.close();
+
 
                     break;
 
@@ -122,9 +149,13 @@ escrituraArchivo.write(consulta.buscaDivisas("USD", "BRL", moneda).toString());
                         lectura.next();//limpio buffer
                         moneda = lectura.nextDouble();
                     }
-                    System.out.println(consulta.buscaDivisas("BRL", "USD", moneda).toString());
+                    consulta1 = consulta.buscaDivisas("BRL", "USD", moneda).toString();
+                    System.out.println(consulta1);
 
-escrituraArchivo.write(consulta.buscaDivisas("BRL", "USD", moneda).toString());
+                    escrituraArchivotxt.write(fecha+"--"+hora + "\nCantidad a cambiar: $" + moneda +", " +  consulta1 + "\n\n");
+                    escrituraArchivo.write(gson.toJson(fecha+"--"+hora + "\nCantidad a cambiar: $" + moneda +", " +  consulta1 + "\n\n"));
+                    escrituraArchivotxt.close();
+                    escrituraArchivo.close();
 
                     break;
 
@@ -145,10 +176,12 @@ escrituraArchivo.write(consulta.buscaDivisas("BRL", "USD", moneda).toString());
                         lectura.next();//limpio buffer
                         moneda = lectura.nextDouble();
                     }
-                    System.out.println(consulta.buscaDivisas("USD", "COP", moneda).toString());
-
-escrituraArchivo.write(consulta.buscaDivisas("USD", "COP", moneda).toString());
-
+                    consulta1 = consulta.buscaDivisas("USD", "COP", moneda).toString();
+                    System.out.println(consulta1); //retorno funcion que realiza la conversion
+                    escrituraArchivotxt.write(fecha+"--"+hora + "\nCantidad a cambiar: $" + moneda +", " +  consulta1 + "\n\n");
+                    escrituraArchivo.write(gson.toJson(fecha+"--"+hora + "\nCantidad a cambiar: $" + moneda +", " +  consulta1 + "\n\n"));
+                    escrituraArchivotxt.close();
+                    escrituraArchivo.close();
                     break;
 
                 case 6:
@@ -168,25 +201,28 @@ escrituraArchivo.write(consulta.buscaDivisas("USD", "COP", moneda).toString());
                         lectura.next();//limpio buffer
                         moneda = lectura.nextDouble();
                     }
-                    System.out.println(consulta.buscaDivisas("COP", "USD", moneda).toString());
 
-escrituraArchivo.write(consulta.buscaDivisas("COP", "USD", moneda).toString());
-
+                    consulta1 = consulta.buscaDivisas("COP", "USD", moneda).toString();
+                    System.out.println(consulta1); //retorno funcion que realiza la conversion
+                    escrituraArchivotxt.write(fecha+"--"+hora + "\nCantidad a cambiar: $" + moneda +", " +  consulta1 + "\n\n");
+                    escrituraArchivo.write(gson.toJson(fecha+"--"+hora + "\nCantidad a cambiar: $" + moneda +", " +  consulta1 + "\n\n"));
+                    escrituraArchivotxt.close();
+                    escrituraArchivo.close();
 
                     break;
 
                 case 9:
                     System.out.println("---------------------------------------------------------------");
                     System.out.println("--------------SALIDA | JEO CONVERSOR DE MONEDAS---------------");
-                   
-escrituraArchivo.close();
-lectura.close();
- System.out.println("---------------------------------------------------------------");
-                    menu = false;
+
+                        System.out.println("---------------------------------------------------------------");
+                        menu = false;
+
                     break;
              }
 
         }
 
+        lectura.close();
     }
 }
