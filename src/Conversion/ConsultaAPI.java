@@ -1,6 +1,8 @@
 package Conversion;
 
 import com.google.gson.Gson;
+
+import java.math.BigDecimal;
 import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
@@ -79,7 +81,9 @@ public class ConsultaAPI {
 
           }
     public ConsultaAPI buscaDivisas(String divisa1, String divisa2, double cantidad){
-        URI direccion = URI.create("https://v6.exchangerate-api.com/v6/6cd67d834a49dbc3f25719d6/pair/"+divisa1+"/"+divisa2+"/"+cantidad);
+
+        BigDecimal cantidad2 = new BigDecimal(cantidad); //para soportar grandes cantidades
+        URI direccion = URI.create("https://v6.exchangerate-api.com/v6/6cd67d834a49dbc3f25719d6/pair/"+divisa1+"/"+divisa2+"/"+cantidad2);
 
         HttpClient client = HttpClient.newHttpClient();
         HttpRequest request = HttpRequest.newBuilder()
